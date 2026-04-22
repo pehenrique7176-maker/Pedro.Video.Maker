@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>PH Vision</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="style.css">
+
+<!-- Ícones -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+    <video autoplay muted loop id="bg-video">
+    <source src="video.mp4" type="video/mp4">
+</video>
+    <div class="container fade-in">
+
+        <div class="profile">
+            <img src="sua-foto.png" alt="Foto de perfil">
+            <h1>PH VISION 🎬</h1>
+            <p>Videomaker | Marketing | Conteúdo Digital</p>
+        </div>
+
+        <div class="links">
+            <a href="https://instagram.com/pedroh_jiujitsu" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+<div id="contador"></div>
+            <a href="https://wa.me/5584999980417" target="_blank">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+        </div>
+
+        <footer>
+            © 2026 • PH Vision
+        </footer>
+
+    </div>
+    <script>
+const links = document.querySelectorAll(".links a");
+
+links.forEach(link => {
+    link.addEventListener("click", () => {
+        let nome = link.innerText;
+
+        let cliques = localStorage.getItem(nome) || 0;
+        cliques++;
+
+        localStorage.setItem(nome, cliques);
+
+        console.log(nome + ": " + cliques + " cliques");
+    });
+});
+</script>
+</body>
+</html>
